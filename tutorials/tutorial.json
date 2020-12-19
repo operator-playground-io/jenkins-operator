@@ -5,6 +5,12 @@
    "footer":"footer.md",
    "tutorials":[
       {
+         "description":"How it works",
+         "duration":"15 min",
+         "tutorial_name":"how-it-works.md",
+         "title":"How Jenkins Operator works"
+      },
+      {
          "description":"Install Jenkins Operator",
          "duration":"15 min",
          "tutorial_name":"install-jenkins-operator.md",

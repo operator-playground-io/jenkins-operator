@@ -35,23 +35,3 @@ The Jenkins Operator design incorporates the following concepts:
 
 ![](_images/Architecture.png)
 
-Base reconciliation loop takes care of reconciling base Jenkins configuration, which consists of:
-
-- Ensure Manifests - monitors any changes in manifests
-- Ensure Jenkins Pod - creates and verifies the status of Jenkins master Pod
-- Ensure Jenkins Configuration - configures Jenkins instance including hardening, initial configuration for plugins, etc.
-- Ensure Jenkins API token - generates Jenkins API token and initialized Jenkins client
-
-User reconciliation loop takes care of reconciling user provided configuration, which consists of:
-
-- Ensure Restore Job - creates Restore job and ensures that restore has been successfully performed
-- Ensure Seed Jobs - creates Seed Jobs and ensures that all of them have been successfully executed
-- Ensure User Configuration - executed user provided configuration, like groovy scripts, configuration as code or plugins
-- Ensure Backup Job - creates a Backup job and ensures that backup has been successfully performed
-
-![](_images/Architecture1.png)
-
-
-
-
-

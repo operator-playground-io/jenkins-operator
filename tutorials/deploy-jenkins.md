@@ -83,3 +83,4 @@ Forwarding from [::1]:8080 -> 8080
 
 Click on the <a href="https://##DNS.ip##:8080" target="_blank">https://##DNS.ip##:8080</a> to access Jenkins Dashboard
 
+Now, you can prepare your own pipelines and update spec.seedJobs section in your Jenkins manifest.
