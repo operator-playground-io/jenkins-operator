@@ -22,7 +22,7 @@
       {
          "title":"jenkins Operator",
          "description":"jenkins Operator ",
-         "url":"https://operatorhub.io/operator/jenkins"
+         "url":"https://operatorhub.io/operator/jenkins-operator"
       }
    ]
 }
