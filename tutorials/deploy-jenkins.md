@@ -81,5 +81,5 @@ Forwarding from 127.0.0.1:8080 -> 8080
 Forwarding from [::1]:8080 -> 8080
 ```
 
-Then open a browser with the address localhost:8080 to view your Jenkins Dashboard
+Click on the <a href="https://##DNS.ip##:8080" target="_blank">https://##DNS.ip##:30449</a> to access Jenkins Dashboard
 
