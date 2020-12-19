@@ -1,0 +1,35 @@
+{
+  "name": "jenkins Operator",
+  "description": "jenkins Operator",
+  "logo": "_images/SalesStack.png",
+  "has_supporting_content": true,
+  "stack_id": "jenkins-operator",
+  "type": "stack",
+  "categories": ["Integration & Delivery"],
+  "platform": "Kubernetes",
+  "cover": "cover.md",
+  "meta": {
+    "Database": ["jenkins"],
+    "Type":[
+         "Operators"
+      ],
+    "Install time": ["5 minutes"]
+  },
+"deployment_information": {
+  "Operator Project": "NA",
+  "Deployment Namespace": "default"
+},
+  "commands": [
+    {
+      "description": "Install Operator",
+      "exec": "kubectl apply -f https://raw.githubusercontent.com/jenkinsci/kubernetes-operator/master/deploy/all-in-one-v1alpha2.yaml"
+    }
+  ],
+  "display": [
+    {
+      "name": "Developer Dashboard",
+      "url": "##DNS.host##/codeserver",
+      "enabled": true
+    }
+  ]
+}
