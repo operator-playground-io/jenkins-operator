@@ -33,5 +33,5 @@ The Jenkins Operator design incorporates the following concepts:
 - Watches any changes of manifests and maintain the desired state according to deployed custom resource manifest
 - Implements the main reconciliation loop which consists of two smaller reconciliation loops - base and user
 
-![](_images/Architecture.png)
+![](_images/Architecture.PNG)
 
