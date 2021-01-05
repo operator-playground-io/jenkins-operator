@@ -17,12 +17,12 @@
   },
 "deployment_information": {
   "Operator Project": "NA",
-  "Deployment Namespace": "default"
+  "Deployment Namespace": "my-jenkins-operator"
 },
   "commands": [
     {
       "description": "Install Operator",
-      "exec": "kubectl apply -f https://raw.githubusercontent.com/jenkinsci/kubernetes-operator/master/deploy/all-in-one-v1alpha2.yaml"
+      "exec": "kubectl create -f https://operatorhub.io/install/jenkins-operator.yaml"
     }
   ],
   "display": [
