@@ -68,19 +68,22 @@ kubectl -n default get secret $SECRET_NAME -o 'jsonpath={.data.password}' | base
 
 ### Connect to Jenkins (actual Kubernetes cluster)
 
+To access etcd cluster externally, lets first update service to use NodePort:
+
 * Execute below command to use NodePort:
-
 ```execute
-kubectl port-forward jenkins-example 8080:8080
+kubectl get service jenkins-operator-http-example --output yaml -n my-jenkins-operator > /tmp/my-jenkins.yaml
+sed -i "s/type: .*/type: NodePort/g" /tmp/my-jenkins.yaml
+kubectl patch svc jenkins-operator-http-example -p "$(cat /tmp/my-jenkins.yaml)" --namespace my-jenkins-operator
 ```
 
-You will see output similar below:
-
+* Execute below command to update NodePort to 32379:
+```execute
+kubectl get service jenkins-operator-http-example --output yaml -n my-jenkins-operator > /tmp/my-jenkins.yaml
+sed -i "s/nodePort: .*/nodePort: 32379/g" /tmp/my-jenkins.yaml
+kubectl patch svc jenkins-operator-http-example -p "$(cat /tmp/my-jenkins.yaml)" --namespace my-jenkins-operator
 ```
-Forwarding from 127.0.0.1:8080 -> 8080
-Forwarding from [::1]:8080 -> 8080
-```
 
-Click on the <a href="https://##DNS.ip##:8080" target="_blank">https://##DNS.ip##:8080</a> to access Jenkins Dashboard
+Click on the <a href="http://##DNS.ip##:32379" target="_blank">http://##DNS.ip##:32379</a> to access Jenkins Dashboard
 
 Now, you can prepare your own pipelines and update spec.seedJobs section in your Jenkins manifest.
